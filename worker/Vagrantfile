@@ -1,0 +1,13 @@
+# o nome do host worker deve ser diferente do master, caso contrário o nó não entra no cluster
+Vagrant.configure("2") do |config|
+config.vm.box = "ubuntu/bionic64"
+config.vm.hostname = "no-ubuntu"
+#coloquei a minha rede em bridge para usar o ip que será gerado no servidor DHCP do meu roteador, verifique com
+#ifconfig qual é a sua interface que você usa, pode ter nome diferente
+
+config.vm.network "public_network", bridge:"enp3s0"
+	  config.vm.provider "virtualbox" do |vb|
+		  vb.name = "no-ubuntu"
+		  vb.memory = "2048"
+	  end
+end
