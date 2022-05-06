@@ -3,4 +3,4 @@
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
-/usr/local/bin/minikube start --nodes 2 -p multinode-demo
+/usr/local/bin/minikube start --driver=virtualbox --nodes 2 -p multinode-demo
